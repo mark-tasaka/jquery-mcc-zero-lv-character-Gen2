@@ -5,10 +5,10 @@
 */
 function getGenotype(){
     
-   // var genotype = 90;
-    var genotype = Math.floor(Math.random() * 100);
+   // let genotype = 90;
+    let genotype = Math.floor(Math.random() * 100);
     
-    var character;
+    let character;
     
     if(genotype >= 0 && genotype <=31)
         {
@@ -35,7 +35,7 @@ function getGenotype(){
       
       function getBaseLanguages(species, intelligence) {
           
-          var baseLanguage = "Nu-Speak";
+          let baseLanguage = "Nu-Speak";
           
           if(species === "Manimal" && intelligence >=8){
               baseLanguage = "Nu-Speak, Mamimal dialect";
@@ -54,7 +54,7 @@ function getGenotype(){
       
       function getBonusLanguages(intelligence){
           
-          var bonusLanguages = "";
+          let bonusLanguages = "";
           
           if(intelligence >=13 && intelligence <=15) {
               bonusLanguages = " & 1 additional language";
@@ -73,7 +73,7 @@ function getGenotype(){
   getprofession() - returns the Randomly Generated profession
 */
 function getProfession(){
-	var profession = [
+	let profession = [
         
         {"role": "Hunter", "weapon": "Wood spear<br />", "damage": "1d5<br />", "equipment": ""},
         {"role": "Gatherer", "weapon": "", "damage": "", "equipment": "Large leather sack<br />"}
@@ -87,9 +87,9 @@ function getProfession(){
       */
       function getPhysicalDescription(character){
           
-          //var appearanceRoll = 29;
-          var appearanceRoll = Math.floor(Math.random() * 30);
-          var appearance = "";
+          //let appearanceRoll = 29;
+          let appearanceRoll = Math.floor(Math.random() * 30);
+          let appearance = "";
           
           if(character === "Mutant" && appearanceRoll <= 27){
               appearance = getMutantAppearance().mutation;
@@ -117,7 +117,7 @@ function getProfession(){
 /*addRandomWeapon()
 */
      function addRandomWeapon(){
-          var weapon = [
+          let weapon = [
               {"id": 1, "weapon": "Bone club", "damage": "1d6"},
               {"id": 2, "weapon": "Flint dagger", "damage": "1d4"},
               {"id": 3, "weapon": "Stone axe", "damage": "1d7"},
@@ -133,7 +133,7 @@ function getProfession(){
       
 
       function randomWeaponDamage(weapon){
-          var damage = addSign(strengthModifier + adjustMeleeDamage(birthAugur, getLuckModifier(luck)));
+          let damage = addSign(strengthModifier + adjustMeleeDamage(birthAugur, getLuckModifier(luck)));
           
           if(weapon.weapon === "Blowgun & 12 darts" || weapon.weapon === "Bow & 12 arrows" || weapon.weapon === "Leather sling"){
               damage = addSign(adjustRangeDamage(birthAugur, getLuckModifier(luck)));
@@ -146,7 +146,7 @@ function getProfession(){
 /*addItem() returns a randomly selected item
 */
 function addItem(){
-    var item = [
+    let item = [
         {"id": 1, "item": ""},
         {"id": 2, "item": ""},
         {"id": 3, "item": ""},
@@ -171,7 +171,7 @@ function addItem(){
       /*getArmour() returns the name of armour type
       */
       function getArmour(item){
-          var armour = "";
+          let armour = "";
           
           if(item.id === 1){
               armour = "Fur cloak";
@@ -191,7 +191,7 @@ function addItem(){
       /*getArmourACBonus()
       */
       function getArmourACBonus(item){
-          var acBonus = 0;
+          let acBonus = 0;
           
           if(item.id === 1){
               acBonus = 2;
@@ -209,7 +209,7 @@ function addItem(){
       /*getArmourACBonusString()
       */
       function getArmourACBonusString(item){
-          var acBonus = "";
+          let acBonus = "";
           
           if(item.id === 1){
               acBonus = "+2";
@@ -227,7 +227,7 @@ function addItem(){
       /*getFumble()
       */
       function getFumble(item){
-          var fumble = "";
+          let fumble = "";
           
           if(item.id === 1){
               fumble = "d8";
@@ -245,7 +245,7 @@ function addItem(){
       /*getFumbleDie()
       */
       function getFumbleDie(item){
-          var fumbleDie = "d4";
+          let fumbleDie = "d4";
           
           if(item.id === 1){
               fumbleDie = "d8";
@@ -266,7 +266,7 @@ function addItem(){
 */
     
       function getMaxTechLevel(intelligence) {
-          var techLevel = 0;
+          let techLevel = 0;
           
           if(intelligence >= 3 && intelligence <=7)
               {
@@ -307,7 +307,7 @@ the character received per level from their Stamina modifier and whether they ha
 */
 	  
 function hitPointAdjustPerLevel (luckySign, luckModifier) {
-   var adjust = 0;
+   let adjust = 0;
     if (luckySign != undefined && luckySign.luckySign === "The Ecobot"){
         adjust = luckModifier;
      }
@@ -318,7 +318,7 @@ function hitPointAdjustPerLevel (luckySign, luckModifier) {
  getBaseArmourClass(agilityModifier)- returns the base armour class of the character
 */
 function getBaseArmourClass(agilityModifier){
-	var armourClass = 10;
+	let armourClass = 10;
 	baseArmourClass = armourClass + agilityModifier;
 	return baseArmourClass;
 }	  
@@ -343,7 +343,7 @@ function addModifierSign (modifier) {
 meleeAdjust (luckySign, luckModifier) - adds bonus/penality to Melee attack based on whether the character possesses specific Lucky Signs
 */
 function meleeAdjust (luckySign, luckModifier) {
-   var adjust = 0;
+   let adjust = 0;
     if (luckySign.luckySign != undefined && luckySign.luckySign === "Nuclear Winter"){
         adjust = luckModifier;
      }
@@ -357,7 +357,7 @@ function meleeAdjust (luckySign, luckModifier) {
 rangeAdjust (luckySign, luckModifier) - adds bonus/penality to Range attack based on whether the character possesses specific Lucky Signs
 */	  
 function rangeAdjust (luckySign, luckModifier) {
-   var adjust = 0;
+   let adjust = 0;
     if (luckySign.luckySign != undefined && (luckySign.luckySign === "Nuclear Winter" || luckySign.luckySign === "The Triffid")){
         adjust = luckModifier;
      }
@@ -368,7 +368,7 @@ function rangeAdjust (luckySign, luckModifier) {
 getSpeed (species) returns the base speed of the character based on their genotype
 */
 function getSpeed (species) {
-	var speed = 30;
+	let speed = 30;
 	if(species == "Plantient") {
 		speed = 20;
 	}
@@ -379,7 +379,7 @@ function getSpeed (species) {
  addLuckToSpeed (luckySign, luckModifier) adds bonuses to the character's speed if they have a positive Luck Modifier and the Lucky Sign of The Accelerant
 */
 function addLuckToSpeed (luckySign, luckModifier) {
-	var addSpeed = 0;
+	let addSpeed = 0;
 	if (luckySign.luckySign != undefined && luckySign.luckySign === "The Accelerant" && luckModifier == 1){
 		addSpeed = 5;
 	}
@@ -398,7 +398,7 @@ function addLuckToSpeed (luckySign, luckModifier) {
 adjustRef (luckySign, luckModifier) - add bonus/penality to Saving Throw based on Lucky Sign
 */
 function adjustRef (luckySign, luckModifier) {
-   var adjust = 0;
+   let adjust = 0;
     if (luckySign.luckySign != undefined && (luckySign.luckySign === "The Survivor" || luckySign.luckySign === "The Scientist")){
         adjust = luckModifier;
      }
@@ -409,7 +409,7 @@ function adjustRef (luckySign, luckModifier) {
 adjustFort (luckySign, luckModifier) - add bonus/penality to Saving Throw based on Lucky Sign
 */
 function adjustFort (luckySign, luckModifier) {
-   var adjust = 0;
+   let adjust = 0;
     if (luckySign.luckySign != undefined && (luckySign.luckySign === "The Survivor" || luckySign.luckySign === "The Glow")){
         adjust = luckModifier;
      }
@@ -420,7 +420,7 @@ function adjustFort (luckySign, luckModifier) {
 adjustWill (luckySign, luckModifier) - add bonus/penality to Saving Throw based on Lucky Sign
 */
 function adjustWill (luckySign, luckModifier) {
-   var adjust = 0;
+   let adjust = 0;
     if (luckySign.luckySign != undefined && (luckySign.luckySign === "The Survivor" || luckySign.luckySign === "The Esper")){
         adjust = luckModifier;
      }
@@ -430,7 +430,7 @@ function adjustWill (luckySign, luckModifier) {
 /*adjustMeleeDamage (luckySign, luckModifier) adds luck mod to melee damage rolls if character has specific Luck sign
 */
 function adjustMeleeDamage (luckySign, luckModifier){          
-    var adjust = 0;        
+    let adjust = 0;        
     if (luckySign.luckySign != undefined && (luckySign.luckySign === "The Apocalypse" || luckySign.luckySign === "Ragnarok")){
         adjust = luckModifier;
      }
@@ -441,7 +441,7 @@ function adjustMeleeDamage (luckySign, luckModifier){
 /*adjustRangeDamage (luckySign, luckModifier) adds luck mod to range damage rolls if character has specific Luck sign
 */
 function adjustRangeDamage (luckySign, luckModifier){          
-    var adjust = 0;        
+    let adjust = 0;        
     if (luckySign.luckySign != undefined && (luckySign.luckySign === "The Apocalypse" || luckySign.luckySign === "Revelations")){
         adjust = luckModifier;
      }
@@ -453,7 +453,7 @@ function adjustRangeDamage (luckySign, luckModifier){
 adjustInit (luckySign, luckModifier) - add bonus/penality to Initiative based on Lucky Sign
 */
 function adjustInit (luckySign, luckModifier) {
-   var adjust = 0;
+   let adjust = 0;
     if (luckySign.luckySign != undefined && luckySign.luckySign === "The CPU"){
         adjust = luckModifier;
      }
@@ -466,7 +466,7 @@ function adjustInit (luckySign, luckModifier) {
 adjustAC (luckySign, luckModifier) - add bonus/penality to AC based on Lucky Sign
 */
 function adjustAC (luckySign, luckModifier) {
-   var adjust = 0;
+   let adjust = 0;
     if (luckySign.luckySign != undefined && luckySign.luckySign === "The Bunker"){
         adjust = luckModifier;
      }
@@ -477,7 +477,7 @@ function adjustAC (luckySign, luckModifier) {
 adjustCrit (luckySign, luckModifier) - add bonus/penality to Crit based on Lucky Sign
 */
 function adjustCrit (luckySign, luckModifier) {
-   var adjust = luckModifier * 1;
+   let adjust = luckModifier * 1;
     if (luckySign.luckySign != undefined && luckySign.luckySign === "The War-Bot"){
         adjust = luckModifier * 2;
      }
@@ -488,7 +488,7 @@ function adjustCrit (luckySign, luckModifier) {
 adjustFumble (luckySign, luckModifier) - add bonus/penality to Fumble based on Lucky Sign
 */
 function adjustFumble  (luckySign, luckModifier) {
-   var adjust = luckModifier * -1;
+   let adjust = luckModifier * -1;
     if (luckySign.luckySign != undefined && luckySign.luckySign === "The Backup Disk"){
         adjust = luckModifier * -2;
      }
@@ -516,7 +516,7 @@ function addSign (modifier) {
 meleeDamageAdjust (luckySign, luckModifier) - adds bonus/penality to Melee attack based on whether the character possesses specific Lucky Signs
 */
 function meleeDamageAdjust (luckySign, luckModifier) {
-   var adjust = 0;
+   let adjust = 0;
     if (luckySign.luckySign != undefined && luckySign.luckySign === "The Apocalypse"){
         adjust = luckModifier;
      }
@@ -531,7 +531,7 @@ function meleeDamageAdjust (luckySign, luckModifier) {
 rangeDamageAdjust (luckySign, luckModifier) - adds bonus/penality to Melee attack based on whether the character possesses specific Lucky Signs
 */
 function rangeDamageAdjust (luckySign, luckModifier) {
-   var adjust = 0;
+   let adjust = 0;
     if (luckySign.luckySign != undefined && luckySign.luckySign === "The Apocalypse"){
         adjust = luckModifier;
      }

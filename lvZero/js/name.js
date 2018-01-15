@@ -1,6 +1,6 @@
 
 function getMaleName(){
-    var name = [
+    let name = [
         {"name": "Max"},
         {"name": "Charlie"},
         {"name": "Cooper"},
@@ -102,7 +102,7 @@ function getMaleName(){
         {"name": "Bjarne"},
         {"name": "Bjorn"},
         {"name": "Diederik"},
-        {"name": "Edvard"},
+        {"name": "Edletd"},
         {"name": "Aldwyn"},
         {"name": "Barton"},
         {"name": "Bertram"},
@@ -189,7 +189,7 @@ function getMaleName(){
 
 
 function getFemaleName(){
-    var name = [
+    let name = [
         {"name": "Bella"},
         {"name": "Luna"},
         {"name": "Sadie"},
@@ -239,7 +239,7 @@ function getFemaleName(){
         {"name": "Charlotte"},
         {"name": "Ade"},
         {"name": "Anna"},
-        {"name": "Avarona"},
+        {"name": "Aletona"},
         {"name": "Branwyn"},
         {"name": "Aleena"},
         {"name": "Arlana"},
@@ -350,7 +350,7 @@ function getFemaleName(){
 
       function getName (maleName, femaleName){
           
-          var random = Math.floor((Math.random() * 2) + 1);
+          let random = Math.floor((Math.random() * 2) + 1);
           name = femaleName.name;
           
           if(random === 1){

@@ -1,7 +1,7 @@
 /*getMutantAppearance() gets the random mutant appearance
 */
       function getMutantAppearance(){
-          var appearance = [
+          let appearance = [
               {"mutation": "Skin colour: bright red"},
               {"mutation": "Skin colour: snow white"},
               {"mutation": "Skin colour: lemon yellow"},

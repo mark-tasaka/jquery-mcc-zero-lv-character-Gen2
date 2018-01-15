@@ -2,7 +2,7 @@
       /*getPlantient() returns plantient sub-type
       */
       function getPlantient(){
-          var subType = [
+          let subType = [
               {"features": "Decisuous: maple"},
               {"features": "Decisuous: oak"},
               {"features": "Decisuous: sycamore"},

@@ -3,7 +3,7 @@
       */
       function getManimalType(){
           
-          var subType = [
+          let subType = [
               {"features": "Primate: gorilla"},
               {"features": "Primate: chimpanzee"},
               {"features": "Primate: orangutan"},

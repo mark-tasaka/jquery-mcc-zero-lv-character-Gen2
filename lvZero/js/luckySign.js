@@ -4,7 +4,7 @@
 getLuckySign() - returns a randomly generated Lucky Sign 
 */
 function getLuckySign(){
-    var luckySign = [
+    let luckySign = [
         {"luckySign": "Nuclear Winter", "luckyRoll": "All attack rolls"},
         {"luckySign": "The Roxen", "luckyRoll": "All melee attack rolls"},
         {"luckySign": "The Triffid", "luckyRoll": "Missle fire attack rolls"},
